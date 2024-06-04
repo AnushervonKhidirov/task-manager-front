@@ -1,17 +1,17 @@
 .button {
-    padding: 0.25em 0.5em;
     border-radius: 5px;
+    padding: 0.25em 0.5em;
     transition: all 0.25s;
 }
 
 .button.dark {
-    background-color: var(--semi-light-transparent-v2);
-    color: var(--light);
+    background-color: var(--semi-dark-transparent-v2);
+    color: var(--dark);
 }
 
 .button.dark:hover {
-    background-color: var(--light);
-    color: var(--dark);
+    background-color: var(--dark);
+    color: var(--light);
 }
 
 .button.light {

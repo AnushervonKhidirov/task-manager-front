@@ -1,0 +1,13 @@
+.form {
+    font-size: 20px;
+    display: grid;
+    gap: 0.5em;
+}
+
+.form *:not(button) {
+    justify-self: start;
+}
+
+.form button {
+    justify-self: end;
+}

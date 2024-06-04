@@ -3,8 +3,10 @@ import { open } from '@store/pop-up/slice'
 
 import NavigationButton from '@common/navigation-button/navigation-button'
 import Button from '@common/button/button'
-import PopUp from '../pop-up/pup-up'
+import PopUp from '@common/pop-up/pup-up'
+import Form from '@common/form/form'
 
+import { signInInputs } from './constants'
 import styles from './header.module.css'
 
 const Header = () => {
@@ -24,7 +26,11 @@ const Header = () => {
                 </Button>
             </header>
 
-            {state.isOpened && <PopUp></PopUp>}
+            {state.isOpened && (
+                <PopUp>
+                    <Form endpoint='https://jsonplaceholder.typicode.com/posts' method='POST' inputs={signInInputs}></Form>
+                </PopUp>
+            )}
         </>
     )
 }

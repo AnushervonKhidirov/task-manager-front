@@ -1,0 +1,37 @@
+.close_button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: var(--semi-dark-transparent-v2);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.25s;
+}
+
+.line_0 {
+    transform: translateY(0) rotate(-45deg);
+}
+
+.line_1 {
+    transform: translateY(0) rotate(45deg);
+}
+
+.line {
+    position: absolute;
+    top: 47.5%;
+    left: 10%;
+    width: 80%;
+    height: 5%;
+    background-color: var(--dark);
+    transition: all 0.25s;
+}
+
+.close_button:hover {
+    background-color: var(--dark);
+}
+
+.close_button:hover .line {
+    background-color: var(--light);
+}

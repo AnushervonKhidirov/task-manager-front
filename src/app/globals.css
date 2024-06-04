@@ -1,5 +1,8 @@
 :root {
     --dark: #2e2e30;
+    --semi-dark-transparent-v1: rgba(46, 46, 48, 0.1);
+    --semi-dark-transparent-v2: rgba(46, 46, 48, 0.2);
+
     --light: #f5f4f3;
     --semi-light-transparent-v1: rgba(255, 255, 255, 0.1);
     --semi-light-transparent-v2: rgba(255, 255, 255, 0.2);
@@ -9,6 +12,7 @@
 
 * {
     color: inherit;
+    font-size: 1em;
     text-decoration: none;
     border: none;
     margin: 0;
