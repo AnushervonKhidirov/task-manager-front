@@ -1,0 +1,43 @@
+.navigation_baton {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+
+.navigation_baton:hover {
+    border-color: var(--semi-light-transparent-v2);
+}
+
+.navigation_baton.active .line_1 {
+    opacity: 0;
+}
+
+.navigation_baton.active .line_0 {
+    transform: translateY(0) rotate(-45deg);
+}
+
+.navigation_baton.active .line_2 {
+    transform: translateY(0) rotate(45deg);
+}
+
+.line {
+    position: absolute;
+    top: 47.5%;
+    left: 10%;
+    width: 80%;
+    height: 5%;
+    background: var(--light);
+    transition: all 0.25s;
+}
+
+.line_0 {
+    transform: translateY(-450%);
+}
+
+.line_2 {
+    transform: translateY(450%);
+}

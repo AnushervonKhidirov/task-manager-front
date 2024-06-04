@@ -1,10 +1,31 @@
+import { useAppSelector, useAppDispatch } from '@hook/store'
+import { open } from '@store/pop-up/slice'
+
 import NavigationButton from '@common/navigation-button/navigation-button'
+import Button from '@common/button/button'
+import PopUp from '../pop-up/pup-up'
+
+import styles from './header.module.css'
 
 const Header = () => {
+    const state = useAppSelector(state => state.popUp)
+    const dispatch = useAppDispatch()
+
+    function openPopUp() {
+        dispatch(open())
+    }
+
     return (
-        <header>
-            <NavigationButton />
-        </header>
+        <>
+            <header>
+                <NavigationButton />
+                <Button buttonTheme='light' extraClass={styles.button} func={openPopUp}>
+                    Log in
+                </Button>
+            </header>
+
+            {state.isOpened && <PopUp></PopUp>}
+        </>
     )
 }
 

@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
 
 import menuReducer from './menu/slice'
+import popUpReducer from './pop-up/slice'
 
 export const store = configureStore({
     reducer: {
-        menu: menuReducer
+        menu: menuReducer,
+        popUp: popUpReducer,
     },
 })
 
