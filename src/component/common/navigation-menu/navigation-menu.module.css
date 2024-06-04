@@ -1,0 +1,8 @@
+.navigation_inner {
+    position: absolute;
+    width: var(--navigation-width);
+    right: 0;
+    display: grid;
+    gap: 0.5em;
+    padding: 1em;
+}
