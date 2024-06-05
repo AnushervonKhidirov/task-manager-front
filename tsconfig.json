@@ -24,6 +24,7 @@
             "@store/*": ["./src/store/*"],
             "@type/*": ["./src/type/*"],
             "@hook/*": ["./src/hook/*"],
+            "@constant/*": ["./src/constant/*"],
             "@/*": ["./src/*"]
         }
     },

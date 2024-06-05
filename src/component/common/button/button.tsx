@@ -1,6 +1,6 @@
 import type { ButtonHTMLAttributes, FC, ReactNode } from 'react'
 
-import multipleClasses from '@helper/multiple-classes'
+import getClassNames from '@helper/multiple-classes'
 import styles from './button.module.css'
 
 type Button = {
@@ -14,7 +14,7 @@ type Button = {
 const Button: FC<Button> = ({ children, func, extraClass = '', buttonTheme = 'dark', type = 'button' }) => {
     return (
         <button
-            className={multipleClasses({ classes: [styles.button, styles[buttonTheme], extraClass] })}
+            className={getClassNames({ classes: [styles.button, styles[buttonTheme], extraClass] })}
             type={type}
             onClick={func}
         >

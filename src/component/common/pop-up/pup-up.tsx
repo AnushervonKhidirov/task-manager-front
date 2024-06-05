@@ -6,7 +6,7 @@ import { close } from '@store/pop-up/slice'
 import CloseButton from '../ close-button/close-button'
 
 import styles from './pop-up.module.css'
-import multipleClasses from '@helper/multiple-classes'
+import getClassNames from '@helper/multiple-classes'
 
 const PopUp: FC<{ children: ReactNode }> = ({ children }) => {
     const dispatch = useAppDispatch()
@@ -16,7 +16,7 @@ const PopUp: FC<{ children: ReactNode }> = ({ children }) => {
     }
 
     return (
-        <div className={multipleClasses({ classes: [styles.pop_up] })} onClick={closePopUp}>
+        <div className={getClassNames({ classes: [styles.pop_up] })} onClick={closePopUp}>
             <div className={styles.content} onClick={e => e.stopPropagation()}>
                 <CloseButton func={closePopUp} />
                 {children}
