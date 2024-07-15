@@ -1,7 +1,7 @@
 .form {
-    font-size: 20px;
     display: grid;
     gap: 0.5em;
+    font-size: 20px;
 }
 
 .form *:not(button) {
@@ -10,4 +10,17 @@
 
 .form button {
     justify-self: end;
+}
+
+.form input {
+    border: 1px solid var(--semi-dark-transparent-v2);
+    border-radius: 5px;
+    outline: none;
+    padding: 0.25em 0.5em;
+    box-sizing: border-box;
+    transition: all 0.25s;
+}
+
+.form input:focus {
+    border-color: var(--dark);
 }

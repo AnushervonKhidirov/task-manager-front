@@ -1,7 +1,6 @@
 import type { FC, ReactNode } from 'react'
 
-import { useAppDispatch } from '@hook/store'
-import { close } from '@store/pop-up/slice'
+import { usePopUpStore } from '@store/pop-up'
 
 import CloseButton from '../ close-button/close-button'
 
@@ -9,10 +8,10 @@ import styles from './pop-up.module.css'
 import getClassNames from '@helper/multiple-classes'
 
 const PopUp: FC<{ children: ReactNode }> = ({ children }) => {
-    const dispatch = useAppDispatch()
+    const close = usePopUpStore(state => state.close)
 
     function closePopUp() {
-        dispatch(close())
+        close()
     }
 
     return (

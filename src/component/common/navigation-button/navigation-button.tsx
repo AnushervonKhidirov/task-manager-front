@@ -1,22 +1,19 @@
-import { useAppDispatch, useAppSelector } from '@hook/store'
-import { open, close } from '@store/menu/slice'
+import { useMenuStore } from '@store/menu'
 
 import getClassNames from '@helper/multiple-classes'
 
 import styles from './navigation-button.module.css'
 
 const NavigationButton = () => {
-    const state = useAppSelector(state => state.menu)
-    const dispatch = useAppDispatch()
+    const { isOpened, open, close } = useMenuStore(state => state)
 
     function toggleMenuHandler() {
-        const handler = state.isOpened ? close : open
-        dispatch(handler())
+        isOpened ? close() : open()
     }
 
     return (
         <div
-            className={getClassNames({ classes: [styles.navigation_baton], active: { isActive: state.isOpened, activeClass: styles.active } })}
+            className={getClassNames({ classes: [styles.navigation_baton], active: { isActive: isOpened, activeClass: styles.active } })}
             onClick={toggleMenuHandler}
         >
             <div className={getClassNames({ classes: [styles.line, styles.line_0] })}></div>

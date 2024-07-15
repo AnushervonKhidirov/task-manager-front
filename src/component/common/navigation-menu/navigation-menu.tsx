@@ -1,27 +1,23 @@
 import Link from 'next/link'
-import { navigationList } from './constant'
-import { useAppDispatch, useAppSelector } from '@hook/store'
 
-import { close } from '@store/menu/slice'
+import { useMenuStore } from '@store/menu'
+
 import getClassNames from '@helper/multiple-classes'
+
+import { navigationList } from './constant'
 import styles from './navigation-menu.module.css'
 
 const NavigationMenu = () => {
-    const state = useAppSelector(state => state.menu)
-    const dispatch = useAppDispatch()
-
-    function closeMenu() {
-        dispatch(close())
-    }
+    const { isOpened, close } = useMenuStore(state => state)
 
     return (
         <nav
             id='main-navigation'
-            className={getClassNames({ active: { isActive: state.isOpened, activeClass: 'active' } })}
+            className={getClassNames({ active: { isActive: isOpened, activeClass: 'active' } })}
         >
             <div className={styles.navigation_inner}>
                 {navigationList.map(navigationItem => (
-                    <Link onClick={closeMenu} href={navigationItem.link} key={nameToId(navigationItem.name)}>
+                    <Link onClick={close} href={navigationItem.link} key={nameToId(navigationItem.name)}>
                         {navigationItem.name}
                     </Link>
                 ))}

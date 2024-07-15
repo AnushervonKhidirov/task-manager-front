@@ -3,5 +3,5 @@ export type ErrorCustom = {
 }
 
 export type ErrorRequest = ErrorCustom & {
-    statusCode: number
+    statusCode: number | null
 }

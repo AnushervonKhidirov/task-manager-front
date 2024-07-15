@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import type { ReactNode, FC } from 'react'
 
-import Body from '@common/body/body'
+import Body from '@component/body/body'
 
 import './globals.css'
 

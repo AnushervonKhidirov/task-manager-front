@@ -8,7 +8,7 @@ const request: RequestFunc = async ({ endpoint, method, body }) => {
             body: JSON.stringify(body),
         })
 
-        if (!request.ok) {
+        if (!request || !request.ok) {
             throw new Error('Something went wrong, pleas try again later', { cause: { statusCode: request.status } })
         }
 
@@ -16,11 +16,16 @@ const request: RequestFunc = async ({ endpoint, method, body }) => {
 
         return [response, null]
     } catch (err: any) {
+        const statusCode = err.cause && err.cause.statusCode ? err.cause.statusCode : null
+
         const requestErr: ErrorRequest = {
             massage: err.message,
-            statusCode: err.cause.statusCode,
+            statusCode: statusCode,
         }
-        return [null, err]
+
+        console.log(requestErr)
+        
+        return [null, requestErr]
     }
 }
 

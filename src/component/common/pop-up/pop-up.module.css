@@ -8,11 +8,10 @@
 
 .content {
     position: absolute;
-    top: calc(50% - 25vh);
-    left: calc(50% - 25vw);
-    width: 50vw;
-    height: 50vh;
+    top: 50%;
+    left: 50%;
     background: #fff;
-    padding: 50px 25px;
+    padding: 55px 25px 25px 25px;
     cursor: default;
+    transform: translate(-50%, -50%);
 }
